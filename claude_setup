@@ -1,6 +1,6 @@
 this is an initial setup file for claude, it should be removed after being used.
 
-step 1: ensure a claude.md file exists, if one does not, set it up with the following (until you reach EOF (do not include the EOF int he claude.md))
+step 1: ensure a claude.md file exists, if one does not, depending on what you feel is the best solution, choose between doing a /init, merging a /init and the below md template, or set it up with the following (until you reach EOF (do not include the EOF int he claude.md))
  Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
 
 Tradeoff: These guidelines bias toward caution over speed. For trivial tasks, use judgment.
