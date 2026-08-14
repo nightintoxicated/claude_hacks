@@ -93,3 +93,5 @@ set up a local env file, ensure there is a gitignore file that has the .env file
 
 set up a start session and close session script, prompt the user for what they expect to happen at the start and end of a session and guide them through it, testing along the way to ensure that it works, assume that these will change over time.
 include at default in the close session a handover document that is intended for claudes use directly to guide the next session where progress got to, along side a todo file that should be updated at the same time.
+
+once all of these are done, report back whether everything requested in this file has been successful, these should all be tested and confirmed, never guessed.
