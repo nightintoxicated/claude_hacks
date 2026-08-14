@@ -1,0 +1,95 @@
+this is an initial setup file for claude, it should be removed after being used.
+
+step 1: ensure a claude.md file exists, if one does not, set it up with the following (until you reach EOF (do not include the EOF int he claude.md))
+ Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
+
+Tradeoff: These guidelines bias toward caution over speed. For trivial tasks, use judgment.
+1. Think Before Coding, use superpowers throughout every session when it can provide value.
+
+Don't assume. Don't hide confusion. Surface tradeoffs.
+
+Before implementing:
+
+    State your assumptions explicitly. If uncertain, ask.
+
+    If multiple interpretations exist, present them - don't pick silently.
+
+    If a simpler approach exists, say so. Push back when warranted.
+
+    If something is unclear, stop. Name what's confusing. Ask.
+
+2. Simplicity First
+
+Minimum code that solves the problem. Nothing speculative.
+
+    No features beyond what was asked.
+
+    No abstractions for single-use code.
+
+    No "flexibility" or "configurability" that wasn't requested.
+
+    No error handling for impossible scenarios.
+
+    If you write 200 lines and it could be 50, rewrite it.
+
+Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
+3. Surgical Changes
+
+Touch only what you must. Clean up only your own mess.
+
+When editing existing code:
+
+    Don't "improve" adjacent code, comments, or formatting.
+
+    Don't refactor things that aren't broken.
+
+    Match existing style, even if you'd do it differently.
+
+    If you notice unrelated dead code, mention it - don't delete it.
+
+When your changes create orphans:
+
+    Remove imports/variables/functions that YOUR changes made unused.
+
+    Don't remove pre-existing dead code unless asked.
+
+The test: Every changed line should trace directly to the user's request.
+4. Goal-Driven Execution
+
+Define success criteria. Loop until verified.
+
+Transform tasks into verifiable goals:
+
+    "Add validation" → "Write tests for invalid inputs, then make them pass"
+
+    "Fix the bug" → "Write a test that reproduces it, then make it pass"
+
+    "Refactor X" → "Ensure tests pass before and after"
+
+For multi-step tasks, state a brief plan:
+
+1. [Step] → verify: [check]
+2. [Step] → verify: [check]
+3. [Step] → verify: [check]
+
+Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
+
+These guidelines are working if: fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes. 
+
+there is a start session and close session scripts, be aware of them.
+
+EOF
+
+step 2: ensure the following packages and plugins are installed on the system.
+ccstatusline@latest (package)
+superpowers (plugin)
+code-simplifier (plugin)
+context7 (plugin)
+ask the user to configure ccstatusline and ensure they can see the context window, guide the user on what to type to do this.
+
+set up sequential thinking, claude should lead on this and confirm it is installed.
+
+set up a local env file, ensure there is a gitignore file that has the .env file (aswell as any other obvious things that should not be commited publically in here)
+
+set up a start session and close session script, prompt the user for what they expect to happen at the start and end of a session and guide them through it, testing along the way to ensure that it works, assume that these will change over time.
+include at default in the close session a handover document that is intended for claudes use directly to guide the next session where progress got to, along side a todo file that should be updated at the same time.
