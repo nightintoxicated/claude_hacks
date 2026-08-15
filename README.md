@@ -16,3 +16,4 @@ you can also do 1 time reminders (not sure if with or without /loop
 
 ultrathink
 
+hooks are super powerful
